@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joseph Press, PhD — Strategic Foresight, AI Collaboration, AI Transformation</title>
+<meta name="description" content="Prof. Joseph Press — advisor, author, and educator helping organizations become future-ready through strategic foresight, AI-human collaboration for innovation, and AI transformation for integration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1a1a2e;
+    --slate: #2e4057;
+    --medium: #4a5568;
+    --light: #718096;
+    --pale: #e2e8f0;
+    --bg: #fafafa;
+    --white: #ffffff;
+    --accent: #3182ce;
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--navy); background: var(--bg);
+    line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--pale); transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0.9rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600; font-size: 1.15rem; color: var(--navy);
+    text-decoration: none; letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--medium);
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+
+  /* HERO */
+  .hero {
+    padding: 9rem 2rem 4rem;
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 260px; gap: 4rem; align-items: center;
+  }
+  .hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem; font-weight: 700; line-height: 1.18;
+    color: var(--navy); margin-bottom: 1.2rem;
+  }
+  .hero-text .subtitle {
+    font-size: 1.08rem; color: var(--medium); line-height: 1.65;
+    margin-bottom: 1.5rem; max-width: 580px;
+  }
+  .hero-tags {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2rem;
+  }
+  .hero-tag {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+    padding: 0.35rem 0.85rem; border-radius: 20px;
+    background: #edf2f7; color: var(--slate);
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 0.7rem 1.7rem;
+    font-size: 0.87rem; font-weight: 600; letter-spacing: 0.03em;
+    border-radius: 6px; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-primary { background: var(--slate); color: var(--white); border: 2px solid var(--slate); }
+  .btn-primary:hover { background: var(--navy); border-color: var(--navy); }
+  .btn-outline { background: transparent; color: var(--slate); border: 2px solid var(--pale); }
+  .btn-outline:hover { border-color: var(--slate); }
+  .hero-photo {
+    width: 260px; height: 320px;
+    background: linear-gradient(135deg, var(--pale) 0%, #cbd5e0 100%);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--light); font-size: 0.85rem; font-weight: 500; overflow: hidden;
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 600; color: var(--navy);
+    margin-bottom: 1.5rem; line-height: 1.25;
+  }
+  .section-intro {
+    font-size: 1.05rem; color: var(--medium); max-width: 720px;
+    margin-bottom: 3rem; line-height: 1.7;
+  }
+
+  /* DOMAINS */
+  .domains-section { background: var(--white); }
+  .domain {
+    margin-bottom: 3.5rem; padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--pale);
+  }
+  .domain:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .domain-header {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  .domain-left {}
+  .domain-number {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--light); margin-bottom: 0.6rem;
+  }
+  .domain-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 600; color: var(--navy);
+    margin-bottom: 0.3rem; line-height: 1.3;
+  }
+  .domain-subtitle {
+    font-size: 0.92rem; font-weight: 600; color: var(--accent);
+    margin-bottom: 1rem; font-style: italic;
+  }
+  .domain-text {
+    font-size: 0.92rem; color: var(--medium); line-height: 1.7;
+  }
+  .domain-right {
+    display: flex; flex-direction: column; gap: 0.4rem; justify-content: center;
+  }
+  .domain-experience {
+    font-size: 0.85rem; color: var(--medium); line-height: 1.5;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .domain-experience:last-child { border-bottom: none; }
+  .domain-experience strong { color: var(--navy); font-weight: 600; }
+  .domain-experience .org { color: var(--light); }
+  .domain-frameworks {
+    margin-top: 1rem;
+    font-size: 0.82rem; color: var(--light); line-height: 1.6;
+    padding: 1rem; background: #f8fafc; border-radius: 8px;
+  }
+  .domain-frameworks strong { color: var(--medium); font-weight: 600; }
+
+  /* BOOKS */
+  .books-section { background: var(--bg); }
+  .books-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+  .book-card { text-align: left; }
+  .book-cover {
+    width: 100%; aspect-ratio: 2/3;
+    border-radius: 6px; margin-bottom: 0.75rem;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1rem;
+  }
+  .book-cover-text {
+    color: rgba(255,255,255,0.9); font-size: 0.82rem;
+    font-weight: 600; text-align: center; line-height: 1.35;
+  }
+  .book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem;
+  }
+  .book-meta { font-size: 0.75rem; color: var(--light); margin-bottom: 0.3rem; }
+  .book-desc { font-size: 0.78rem; color: var(--medium); line-height: 1.55; }
+
+  /* ENGAGEMENTS */
+  .engagements-section { background: var(--white); }
+  .engagements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .engagement-card {
+    padding: 2rem; border: 1px solid var(--pale); border-radius: 10px;
+    text-align: center; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .engagement-card:hover { border-color: #b0c4de; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+  .engagement-title {
+    font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.75rem;
+  }
+  .engagement-text { font-size: 0.88rem; color: var(--medium); line-height: 1.65; }
+
+  /* CREDENTIALS */
+  .credentials-section { background: var(--bg); }
+  .credentials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .credential-group h3 {
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--slate); margin-bottom: 0.75rem;
+  }
+  .credential-item {
+    font-size: 0.87rem; color: var(--medium); margin-bottom: 0.5rem; line-height: 1.5;
+  }
+  .credential-item strong { color: var(--navy); font-weight: 600; }
+
+  /* CONTACT */
+  .contact-section { background: var(--navy); color: var(--white); text-align: center; }
+  .contact-section .section-label { color: rgba(255,255,255,0.5); }
+  .contact-section .section-title { color: var(--white); }
+  .contact-section .section-intro { color: rgba(255,255,255,0.7); margin: 0 auto 2.5rem; }
+  .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .contact-link {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.92rem; font-weight: 500;
+    padding: 0.6rem 1.4rem; border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px; transition: all 0.2s;
+  }
+  .contact-link:hover {
+    color: var(--white); border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
+  }
+
+  footer {
+    text-align: center; padding: 2rem;
+    font-size: 0.78rem; color: rgba(255,255,255,0.4);
+    background: var(--navy); border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 7rem; }
+    .hero-photo { width: 200px; height: 240px; margin: 0 auto; order: -1; }
+    .hero-text h1 { font-size: 2rem; }
+    .domain-header { grid-template-columns: 1fr; }
+    .books-grid { grid-template-columns: repeat(2, 1fr); }
+    .engagements-grid { grid-template-columns: 1fr; }
+    .credentials-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; transition: 0.3s; }
+  @media (max-width: 768px) {
+    .hamburger { display: block; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--white); padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--pale); gap: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-name">Joseph Press</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#engagements">Work With Me</a></li>
+      <li><a href="#credentials">Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-text">
+    <h1>Be Future-Ready<br>for Agents Everywhere</h1>
+    <p class="subtitle">I help organizations navigate AI-driven change through strategic foresight, human-AI collaboration for innovation, and AI transformation for integration. Professor, advisor, author of five books.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Keynote Speaker</span>
+      <span class="hero-tag">Executive Educator</span>
+      <span class="hero-tag">Strategic Advisor</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Get in Touch</a>
+      <a href="#expertise" class="btn btn-outline">View Expertise</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="photo.jpg" alt="Joseph Press">
+  </div>
+</header>
+
+<!-- THREE DOMAINS -->
+<section class="domains-section" id="expertise">
+  <div class="container">
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title">Three domains for the AI era</h2>
+
+    <!-- DOMAIN 1: Strategic Foresight -->
+    <div class="domain">
+      <div class="domain-header">
+        <div class="domain-left">
+          <p class="domain-number">Domain One</p>
+          <h3 class="domain-title">Strategic Foresight for Impact</h3>
+          <p class="domain-subtitle">Imagine &mdash; Design &mdash; Lead</p>
+          <p class="domain-text">Be future-ready for agents everywhere &mdash; across industries, across sectors, across functions. Applied futures thinking for strategic decision-making: using generative AI for scenario simulation, stakeholder engagement, and policy forecasting so leaders can anticipate change and act on it. The Futureback leadership framework guides organizations from a desired future backward to present-day action, turning foresight into strategy with positive impact.</p>
+        </div>
+        <div class="domain-right">
+          <div class="domain-experience"><strong>Research Advisor</strong> <span class="org">&mdash; Institute for the Future (IFTF)</span></div>
+          <div class="domain-experience"><strong>Associated Partner</strong> <span class="org">&mdash; Copenhagen Institute for Futures Studies</span></div>
+          <div class="domain-experience"><strong>Cross-industry foresight</strong> <span class="org">&mdash; John Deere, Westrock, USM</span></div>
+          <div class="domain-experience"><strong>Full Professor</strong> <span class="org">&mdash; Shanghai University of Engineering Sciences</span></div>
+        </div>
+      </div>
+      <div class="domain-frameworks">
+        <strong>Frameworks:</strong> Imagine-Design-Lead Futureback leadership, Augmented Design (Generate Insights, Extend Reality, Connect Experiences, Distribute Impact), six AI opportunity spaces for organizational strategy, Spectrum of Agility and flexive intent
+      </div>
+    </div>
+
+    <!-- DOMAIN 2: AI-Human Collaboration -->
+    <div class="domain">
+      <div class="domain-header">
+        <div class="domain-left">
+          <p class="domain-number">Domain Two</p>
+          <h3 class="domain-title">AI&ndash;Human Collaboration for Innovation</h3>
+          <p class="domain-subtitle">Spark and augment innovation capacity</p>
+          <p class="domain-text">AI-human collaboration that goes beyond new products and services to include education, applied research, and market creation. The Agentic Creative Intelligence framework provides governance structures and diagnostic tools for how teams adopt AI while preserving judgment, accountability, and the capacity to innovate. Applicable to executive education, R&D, faculty development, and cross-functional innovation programs.</p>
+        </div>
+        <div class="domain-right">
+          <div class="domain-experience"><strong>Visiting Professor & Research Director</strong> <span class="org">&mdash; Politecnico di Milano</span></div>
+          <div class="domain-experience"><strong>IDeaLs Research Lab</strong> <span class="org">&mdash; Nestl&eacute;, Philips, Adidas, Stolt</span></div>
+          <div class="domain-experience"><strong>DET Conference</strong> <span class="org">&mdash; AI, XR, IoT, Web3 (25 faculty, 100+ participants)</span></div>
+          <div class="domain-experience"><strong>Vice-Dean</strong> <span class="org">&mdash; NACAA Design Institute (EDNA / China Academy of Art)</span></div>
+          <div class="domain-experience"><strong>Program Founder</strong> <span class="org">&mdash; Parsons New School of Design</span></div>
+        </div>
+      </div>
+      <div class="domain-frameworks">
+        <strong>Frameworks:</strong> Agentic Creative Intelligence (human-AI governance, four diagnostic capacities, creative council), Spectrum of Augmentation and superminds, Storymaking for organizational transformation, AI-augmented pedagogy
+      </div>
+    </div>
+
+    <!-- DOMAIN 3: AI Transformation -->
+    <div class="domain">
+      <div class="domain-header">
+        <div class="domain-left">
+          <p class="domain-number">Domain Three</p>
+          <h3 class="domain-title">AI Transformation for Integration</h3>
+          <p class="domain-subtitle">AI at the core of every offering, process, and function</p>
+          <p class="domain-text">AI needs to be integrated into every offering, every process, every functional unit. That requires use-case identification, process mapping, change management, and deep understanding of existing organizational structure and IT infrastructure &mdash; from ERP to AI. 15 years founding and directing a digital agency and transformation consulting practice, delivering enterprise-scale change across HR, operations, administration, and strategy. Research on why 50%+ of digital transformations stall and engagement-centered models to prevent it.</p>
+        </div>
+        <div class="domain-right">
+          <div class="domain-experience"><strong>Founder & Director</strong> <span class="org">&mdash; Deloitte Digital Switzerland (EMEA)</span></div>
+          <div class="domain-experience"><strong>Executive Education Advisor</strong> <span class="org">&mdash; Center for Creative Leadership</span></div>
+          <div class="domain-experience"><strong>Co-Founder</strong> <span class="org">&mdash; Make Our Future (global consulting cooperative)</span></div>
+          <div class="domain-experience"><strong>Innovation center advisory</strong> <span class="org">&mdash; GovLab, Center for the Edge, Federal Innovation</span></div>
+        </div>
+      </div>
+      <div class="domain-frameworks">
+        <strong>Capabilities:</strong> Use-case identification, process mapping and redesign, change management (visioning, leadership alignment, communications, training), HR transformation, service design, technology adoption strategy, HRIS/BPO, innovation labs
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section class="books-section" id="books">
+  <div class="container">
+    <p class="section-label">Books</p>
+    <h2 class="section-title">Five books on intelligence, transformation & leadership</h2>
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-cover" style="background: linear-gradient(135deg, #2e4057 0%, #1a1a2e 100%);">
+          <span class="book-cover-text">Agentic<br>Creative<br>Intelligence</span>
+        </div>
+        <h3 class="book-title">Designing with Agentic Creative Intelligence</h3>
+        <p class="book-meta">Routledge, Fall 2026</p>
+        <p class="book-desc">AI adoption, human-AI governance, organizational readiness</p>
+      </div>
+      <div class="book-card">
+        <div class="book-cover" style="background: linear-gradient(135deg, #3182ce 0%, #2e4057 100%);">
+          <span class="book-cover-text">Designing<br>Sustainable<br>Futures</span>
+        </div>
+        <h3 class="book-title">Designing Sustainable Futures</h3>
+        <p class="book-meta">Routledge, 2024</p>
+        <p class="book-desc">AI for foresight, visualization, and business strategy</p>
+      </div>
+      <div class="book-card">
+        <div class="book-cover" style="background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);">
+          <span class="book-cover-text">Office<br>Shock</span>
+        </div>
+        <h3 class="book-title">Office Shock</h3>
+        <p class="book-meta">Berrett-Koehler, 2023</p>
+        <p class="book-desc">AI augmentation, organizational agility, superminds</p>
+      </div>
+      <div class="book-card">
+        <div class="book-cover" style="background: linear-gradient(135deg, #553c9a 0%, #2d3748 100%);">
+          <span class="book-cover-text">Storymaking</span>
+        </div>
+        <h3 class="book-title">Storymaking</h3>
+        <p class="book-meta">Routledge, 2022</p>
+        <p class="book-desc">Narrative co-creation for innovation and transformation</p>
+      </div>
+      <div class="book-card">
+        <div class="book-cover" style="background: linear-gradient(135deg, #2c7a7b 0%, #1a365d 100%);">
+          <span class="book-cover-text">Innovation<br>Design &<br>Leadership</span>
+        </div>
+        <h3 class="book-title">Innovation, Design and Leadership</h3>
+        <p class="book-meta">Emerald, 2021</p>
+        <p class="book-desc">Why digital transformations fail; engagement-centered adoption</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section class="engagements-section" id="engagements">
+  <div class="container">
+    <p class="section-label">Work With Me</p>
+    <h2 class="section-title">How I work with organizations</h2>
+    <div class="engagements-grid">
+      <div class="engagement-card">
+        <h3 class="engagement-title">Keynote Speaking</h3>
+        <p class="engagement-text">Immersive keynotes on AI adoption, organizational transformation, and strategic foresight. Formats include video segments, framework visualizations, and live audience engagement. Business schools, industry conferences, and corporate events worldwide.</p>
+      </div>
+      <div class="engagement-card">
+        <h3 class="engagement-title">Executive Education</h3>
+        <p class="engagement-text">Design and delivery of programs that build innovation and leadership capability across business disciplines. From intensive workshops to multi-session series. Experience across Politecnico di Milano, Center for Creative Leadership, and international business schools.</p>
+      </div>
+      <div class="engagement-card">
+        <h3 class="engagement-title">Strategic Advisory</h3>
+        <p class="engagement-text">AI adoption strategy, organizational change management, and futures-oriented planning. Advisory to C-suite leaders, academic institutions, and innovation centers on integrating AI across operations, education, and leadership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials-section" id="credentials">
+  <div class="container">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">Credentials</h2>
+    <div class="credentials-grid">
+      <div class="credential-group">
+        <h3>Education</h3>
+        <p class="credential-item"><strong>Ph.D. Design Technology</strong>, MIT &mdash; Knowledge representation, constraint-based reasoning, human&ndash;machine interaction</p>
+        <p class="credential-item"><strong>S.M. Architecture</strong>, MIT</p>
+        <p class="credential-item"><strong>B.S. Managerial Economics</strong>, Carnegie Mellon University</p>
+      </div>
+      <div class="credential-group">
+        <h3>Current Positions</h3>
+        <p class="credential-item"><strong>Full Professor</strong>, Shanghai University of Engineering Sciences</p>
+        <p class="credential-item"><strong>Associated Partner</strong>, Copenhagen Institute for Futures Studies</p>
+        <p class="credential-item"><strong>Research Advisor</strong>, Institute for the Future</p>
+        <p class="credential-item"><strong>Co-Founder</strong>, Make Our Future</p>
+      </div>
+      <div class="credential-group">
+        <h3>Recognitions</h3>
+        <p class="credential-item">China Foreign National Expert</p>
+        <p class="credential-item">Chartwell Speaker</p>
+        <p class="credential-item">5 books (Routledge, Emerald, Berrett-Koehler)</p>
+        <p class="credential-item">European Journal of Innovation Management, Journal of Knowledge Management</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Let's work together</h2>
+    <p class="section-intro">Available for keynote speaking, executive education, and strategic advisory on AI adoption and organizational transformation.</p>
+    <div class="contact-links">
+      <a href="mailto:josephpress1@gmail.com" class="contact-link">josephpress1@gmail.com</a>
+      <a href="https://www.linkedin.com/in/josephpress" class="contact-link" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Joseph Press. All rights reserved.</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+</script>
+</body>
+</html>
