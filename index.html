@@ -106,7 +106,7 @@
 
   /* LOGO BAR */
   .logo-bar {
-    padding: 2.5rem 2rem 2rem;
+    padding: 3rem 2rem 2.5rem;
     background: var(--white);
     border-bottom: 1px solid var(--pale);
   }
@@ -115,30 +115,29 @@
   }
   .logo-bar-label {
     font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--light); margin-bottom: 1.2rem;
+    text-transform: uppercase; color: var(--light); margin-bottom: 1.5rem;
     text-align: center;
   }
-  .logo-sectors {
-    display: flex; flex-direction: column; gap: 1rem;
+  .sector-cards {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem;
   }
-  .logo-sector {
-    display: flex; align-items: baseline; gap: 0.8rem;
-    flex-wrap: wrap;
+  .sector-card {
+    border: 1px solid var(--pale); border-radius: 10px;
+    padding: 1.4rem 1.2rem; text-align: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
+  .sector-card:hover { border-color: #b0c4de; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
   .sector-label {
     font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--light);
-    min-width: 110px; flex-shrink: 0;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 0.8rem;
   }
   .sector-names {
-    display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;
+    display: flex; flex-direction: column; gap: 0.3rem;
   }
   .sector-name {
     font-size: 0.8rem; font-weight: 500; color: var(--medium);
-    opacity: 0.75;
-  }
-  .sector-dot {
-    font-size: 0.5rem; color: var(--pale); line-height: 1;
+    line-height: 1.4;
   }
 
   /* SECTIONS */
@@ -275,7 +274,7 @@
     .domain-cover-placeholder { width: 120px; }
     .credentials-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
-    .sector-label { min-width: auto; }
+    .sector-cards { grid-template-columns: repeat(2, 1fr); }
   }
   .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
   .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; transition: 0.3s; }
@@ -327,53 +326,53 @@
 <div class="logo-bar">
   <div class="logo-bar-inner">
     <p class="logo-bar-label">Organizations I've worked with</p>
-    <div class="logo-sectors">
-      <div class="logo-sector">
-        <span class="sector-label">Technology</span>
+    <div class="sector-cards">
+      <div class="sector-card">
+        <p class="sector-label">Technology</p>
         <div class="sector-names">
-          <span class="sector-name">Samsung</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">SAP</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">Verizon</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">AOL Time Warner</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">Swisscom</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Samsung</span>
+          <span class="sector-name">SAP</span>
+          <span class="sector-name">Verizon</span>
+          <span class="sector-name">Swisscom</span>
           <span class="sector-name">Honeywell</span>
+          <span class="sector-name">AOL Time Warner</span>
         </div>
       </div>
-      <div class="logo-sector">
-        <span class="sector-label">Pharma & Health</span>
+      <div class="sector-card">
+        <p class="sector-label">Pharma & Health</p>
         <div class="sector-names">
-          <span class="sector-name">Novartis</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">Roche</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">Pfizer</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Novartis</span>
+          <span class="sector-name">Roche</span>
+          <span class="sector-name">Pfizer</span>
           <span class="sector-name">Takeda</span>
         </div>
       </div>
-      <div class="logo-sector">
-        <span class="sector-label">Financial Services</span>
+      <div class="sector-card">
+        <p class="sector-label">Financial Services</p>
         <div class="sector-names">
-          <span class="sector-name">Credit Suisse</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">HSBC</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">Zurich</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Credit Suisse</span>
+          <span class="sector-name">HSBC</span>
+          <span class="sector-name">Zurich</span>
           <span class="sector-name">Citibank</span>
         </div>
       </div>
-      <div class="logo-sector">
-        <span class="sector-label">Consumer & Industry</span>
+      <div class="sector-card">
+        <p class="sector-label">Consumer & Industry</p>
         <div class="sector-names">
-          <span class="sector-name">Nestl&eacute;</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">Coca-Cola Enterprises</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">McDonald's</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">Walmart</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">Porsche</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">John Deere</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Nestl&eacute;</span>
+          <span class="sector-name">Coca-Cola</span>
+          <span class="sector-name">McDonald's</span>
+          <span class="sector-name">Walmart</span>
+          <span class="sector-name">Porsche</span>
+          <span class="sector-name">John Deere</span>
           <span class="sector-name">Devon</span>
         </div>
       </div>
-      <div class="logo-sector">
-        <span class="sector-label">Education & NGO</span>
+      <div class="sector-card">
+        <p class="sector-label">Education & NGO</p>
         <div class="sector-names">
-          <span class="sector-name">IMD</span><span class="sector-dot">&bull;</span>
-          <span class="sector-name">UNICEF</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">IMD</span>
+          <span class="sector-name">UNICEF</span>
           <span class="sector-name">ICRC</span>
         </div>
       </div>
@@ -384,7 +383,6 @@
 <!-- FOUR CAPABILITIES -->
 <section class="domains-section" id="expertise">
   <div class="container">
-    <p class="section-label">Capabilities</p>
     <h2 class="section-title">Four Capabilities for the AI Era</h2>
 
     <!-- 1. Strategic Foresight -->
