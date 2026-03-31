@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Favicon (inline SVG) -->
+<!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,7 +81,7 @@
     letter-spacing: 0.02em; margin-bottom: 1.2rem;
   }
   .hero-text .subtitle {
-    font-size: 1.1rem; color: var(--medium); line-height: 1.6;
+    font-size: 1.05rem; color: var(--medium); line-height: 1.65;
     margin-bottom: 2rem; max-width: 540px;
   }
   .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -95,36 +95,51 @@
   .btn-outline { background: transparent; color: var(--slate); border: 2px solid var(--pale); }
   .btn-outline:hover { border-color: var(--slate); }
   .hero-photo {
-    width: 300px; height: 380px;
+    width: 300px; height: 400px;
     border-radius: 16px; overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.12);
   }
-  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 15%;
+  }
 
   /* LOGO BAR */
   .logo-bar {
-    padding: 2.5rem 2rem;
-    border-bottom: 1px solid var(--pale);
+    padding: 2.5rem 2rem 2rem;
     background: var(--white);
+    border-bottom: 1px solid var(--pale);
   }
   .logo-bar-inner {
-    max-width: 1100px; margin: 0 auto; text-align: center;
+    max-width: 1100px; margin: 0 auto;
   }
   .logo-bar-label {
     font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
     text-transform: uppercase; color: var(--light); margin-bottom: 1.2rem;
+    text-align: center;
   }
-  .logo-bar-logos {
-    display: flex; justify-content: center; align-items: center;
-    gap: 2.5rem; flex-wrap: wrap;
+  .logo-sectors {
+    display: flex; flex-direction: column; gap: 1rem;
   }
-  .logo-item {
-    font-size: 0.82rem; font-weight: 600; color: var(--medium);
-    letter-spacing: 0.02em; opacity: 0.7; transition: opacity 0.2s;
-    white-space: nowrap;
+  .logo-sector {
+    display: flex; align-items: baseline; gap: 0.8rem;
+    flex-wrap: wrap;
   }
-  .logo-item:hover { opacity: 1; }
-  .logo-sep { width: 1px; height: 18px; background: var(--pale); }
+  .sector-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--light);
+    min-width: 110px; flex-shrink: 0;
+  }
+  .sector-names {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;
+  }
+  .sector-name {
+    font-size: 0.8rem; font-weight: 500; color: var(--medium);
+    opacity: 0.75;
+  }
+  .sector-dot {
+    font-size: 0.5rem; color: var(--pale); line-height: 1;
+  }
 
   /* SECTIONS */
   section { padding: 5rem 2rem; }
@@ -231,20 +246,23 @@
   .engagements-section { background: var(--white); }
   .engagements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .engagement-card {
-    padding: 2.2rem 1.8rem; border: 1px solid var(--pale); border-radius: 12px;
+    border: 1px solid var(--pale); border-radius: 12px;
     transition: border-color 0.2s, box-shadow 0.2s;
-    position: relative;
+    overflow: hidden;
   }
   .engagement-card:hover { border-color: #b0c4de; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
-  .engagement-icon {
-    width: 44px; height: 44px; border-radius: 10px;
+  .engagement-visual {
+    width: 100%; height: 160px;
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1.2rem; font-size: 1.3rem;
+    position: relative; overflow: hidden;
+  }
+  .engagement-body {
+    padding: 1.6rem 1.6rem 1.8rem;
   }
   .engagement-title {
-    font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem;
+    font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem;
   }
-  .engagement-text { font-size: 0.85rem; color: var(--medium); line-height: 1.65; margin-bottom: 1rem; }
+  .engagement-text { font-size: 0.85rem; color: var(--medium); line-height: 1.65; margin-bottom: 0.8rem; }
   .engagement-outcome {
     font-size: 0.78rem; font-weight: 600; color: var(--accent);
     padding-top: 0.8rem; border-top: 1px solid var(--pale);
@@ -271,7 +289,7 @@
   .contact-section .section-title { color: var(--white); margin-bottom: 0.6rem; }
   .contact-section .section-intro { color: rgba(255,255,255,0.65); margin: 0 auto 1rem; }
   .contact-next {
-    font-size: 0.88rem; color: rgba(255,255,255,0.5);
+    font-size: 0.88rem; color: rgba(255,255,255,0.45);
     margin-bottom: 2.5rem; font-style: italic;
   }
   .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
@@ -295,15 +313,14 @@
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 7rem; }
-    .hero-photo { width: 220px; height: 280px; margin: 0 auto; order: -1; }
+    .hero-photo { width: 220px; height: 300px; margin: 0 auto; order: -1; }
     .hero-text h1 { font-size: 2.1rem; }
     .domain-header { grid-template-columns: 1fr; }
     .books-grid { grid-template-columns: repeat(2, 1fr); }
     .engagements-grid { grid-template-columns: 1fr; }
     .credentials-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
-    .logo-bar-logos { gap: 1.2rem; }
-    .logo-sep { display: none; }
+    .sector-label { min-width: auto; }
   }
   .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
   .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; transition: 0.3s; }
@@ -340,12 +357,12 @@
 <!-- HERO -->
 <header class="hero">
   <div class="hero-text">
-    <p class="byline">Professor &middot; Advisor &middot; Author of Five Books</p>
+    <p class="byline">Professor &middot; Author &middot; Researcher</p>
     <h1>Be Future-Ready<br>for Agents Everywhere</h1>
-    <p class="subtitle">Helping organizations navigate AI-driven change through strategic foresight, human-AI collaboration, and enterprise transformation.</p>
+    <p class="subtitle">I write and teach about how organizations can navigate AI-driven change &mdash; through strategic foresight, human-AI collaboration, and thoughtful transformation.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary">Get in Touch</a>
-      <a href="#expertise" class="btn btn-outline">Explore Expertise</a>
+      <a href="#expertise" class="btn btn-outline">Explore My Work</a>
     </div>
   </div>
   <div class="hero-photo">
@@ -356,21 +373,57 @@
 <!-- LOGO BAR -->
 <div class="logo-bar">
   <div class="logo-bar-inner">
-    <p class="logo-bar-label">Trusted by</p>
-    <div class="logo-bar-logos">
-      <span class="logo-item">MIT</span>
-      <span class="logo-sep"></span>
-      <span class="logo-item">Deloitte Digital</span>
-      <span class="logo-sep"></span>
-      <span class="logo-item">Institute for the Future</span>
-      <span class="logo-sep"></span>
-      <span class="logo-item">Politecnico di Milano</span>
-      <span class="logo-sep"></span>
-      <span class="logo-item">Routledge</span>
-      <span class="logo-sep"></span>
-      <span class="logo-item">Nestl&eacute;</span>
-      <span class="logo-sep"></span>
-      <span class="logo-item">John Deere</span>
+    <p class="logo-bar-label">Organizations I've worked with</p>
+    <div class="logo-sectors">
+      <div class="logo-sector">
+        <span class="sector-label">Technology</span>
+        <div class="sector-names">
+          <span class="sector-name">Samsung</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">SAP</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Verizon</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">AOL Time Warner</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Swisscom</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Honeywell</span>
+        </div>
+      </div>
+      <div class="logo-sector">
+        <span class="sector-label">Pharma & Health</span>
+        <div class="sector-names">
+          <span class="sector-name">Novartis</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Roche</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Pfizer</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Takeda</span>
+        </div>
+      </div>
+      <div class="logo-sector">
+        <span class="sector-label">Financial Services</span>
+        <div class="sector-names">
+          <span class="sector-name">Credit Suisse</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">HSBC</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Zurich</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Citibank</span>
+        </div>
+      </div>
+      <div class="logo-sector">
+        <span class="sector-label">Consumer & Industry</span>
+        <div class="sector-names">
+          <span class="sector-name">Nestl&eacute;</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Coca-Cola Enterprises</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">McDonald's</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Walmart</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Porsche</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">John Deere</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">Devon</span>
+        </div>
+      </div>
+      <div class="logo-sector">
+        <span class="sector-label">Education & NGO</span>
+        <div class="sector-names">
+          <span class="sector-name">IMD</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">UNICEF</span><span class="sector-dot">&bull;</span>
+          <span class="sector-name">ICRC</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -378,7 +431,7 @@
 <!-- THREE DOMAINS -->
 <section class="domains-section" id="expertise">
   <div class="container">
-    <p class="section-label">Expertise</p>
+    <p class="section-label">Areas of Focus</p>
     <h2 class="section-title">Three domains for the AI era</h2>
 
     <!-- DOMAIN 1 -->
@@ -398,11 +451,10 @@
         </div>
       </div>
       <div class="domain-frameworks">
-        <span class="framework-tag">Futureback Leadership</span>
-        <span class="framework-tag">Augmented Design</span>
-        <span class="framework-tag">AI Opportunity Spaces</span>
-        <span class="framework-tag">Spectrum of Agility</span>
-        <span class="framework-tag">Flexive Intent</span>
+        <span class="framework-tag">Research Advisor, IFTF</span>
+        <span class="framework-tag">Foresight for John Deere, Westrock, USM</span>
+        <span class="framework-tag">Augmented Design with Politecnico di Milano</span>
+        <span class="framework-tag">Futureback strategy with Bob Johansen</span>
       </div>
     </div>
 
@@ -424,11 +476,10 @@
         </div>
       </div>
       <div class="domain-frameworks">
-        <span class="framework-tag">Agentic Creative Intelligence</span>
-        <span class="framework-tag">Spectrum of Augmentation</span>
-        <span class="framework-tag">Superminds</span>
-        <span class="framework-tag">Storymaking</span>
-        <span class="framework-tag">AI-Augmented Pedagogy</span>
+        <span class="framework-tag">IDeaLs lab with Nestl&eacute;, Philips, Adidas</span>
+        <span class="framework-tag">ACI book with Routledge (2026)</span>
+        <span class="framework-tag">Storymaking research with Politecnico</span>
+        <span class="framework-tag">DET conference, 25 faculty, 100+ participants</span>
       </div>
     </div>
 
@@ -449,12 +500,10 @@
         </div>
       </div>
       <div class="domain-frameworks">
-        <span class="framework-tag">Change Management</span>
-        <span class="framework-tag">Process Redesign</span>
-        <span class="framework-tag">HR Transformation</span>
-        <span class="framework-tag">Service Design</span>
-        <span class="framework-tag">Technology Adoption</span>
-        <span class="framework-tag">Innovation Labs</span>
+        <span class="framework-tag">Founded Deloitte Digital Switzerland</span>
+        <span class="framework-tag">Advisor, Center for Creative Leadership</span>
+        <span class="framework-tag">Research on why 50%+ transformations stall</span>
+        <span class="framework-tag">GovLab, Center for the Edge, Federal Innovation</span>
       </div>
     </div>
 
@@ -512,32 +561,93 @@
 <section class="engagements-section" id="engagements">
   <div class="container">
     <p class="section-label">Work With Me</p>
-    <h2 class="section-title">How I work with organizations</h2>
+    <h2 class="section-title">How I share this work</h2>
     <div class="engagements-grid">
+
       <div class="engagement-card">
-        <div class="engagement-icon" style="background: #eef2ff;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3182ce" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <div class="engagement-visual" style="background: linear-gradient(135deg, #eef2ff 0%, #dbeafe 100%);">
+          <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Podium / stage abstraction -->
+            <rect x="60" y="70" width="80" height="8" rx="4" fill="#3182ce" opacity="0.2"/>
+            <rect x="50" y="82" width="100" height="4" rx="2" fill="#3182ce" opacity="0.1"/>
+            <!-- Speaker figure -->
+            <circle cx="100" cy="38" r="10" fill="#3182ce" opacity="0.3"/>
+            <path d="M88 52 C88 52 94 60 100 60 C106 60 112 52 112 52" stroke="#3182ce" stroke-width="2" opacity="0.3" fill="none"/>
+            <!-- Sound waves -->
+            <path d="M120 35 C124 30 124 45 120 40" stroke="#3182ce" stroke-width="1.5" opacity="0.2" fill="none"/>
+            <path d="M126 30 C132 22 132 50 126 42" stroke="#3182ce" stroke-width="1.5" opacity="0.15" fill="none"/>
+            <!-- Audience dots -->
+            <circle cx="55" cy="100" r="4" fill="#3182ce" opacity="0.15"/>
+            <circle cx="70" cy="98" r="4" fill="#3182ce" opacity="0.15"/>
+            <circle cx="85" cy="100" r="4" fill="#3182ce" opacity="0.15"/>
+            <circle cx="100" cy="98" r="4" fill="#3182ce" opacity="0.15"/>
+            <circle cx="115" cy="100" r="4" fill="#3182ce" opacity="0.15"/>
+            <circle cx="130" cy="98" r="4" fill="#3182ce" opacity="0.15"/>
+            <circle cx="145" cy="100" r="4" fill="#3182ce" opacity="0.15"/>
+          </svg>
         </div>
-        <h3 class="engagement-title">Keynote Speaking</h3>
-        <p class="engagement-text">Immersive keynotes with framework visualizations and live engagement. Business schools, industry conferences, and corporate events worldwide.</p>
-        <p class="engagement-outcome">Your audience leaves with actionable frameworks, not abstract ideas</p>
+        <div class="engagement-body">
+          <h3 class="engagement-title">Keynote Speaking</h3>
+          <p class="engagement-text">Research-based talks with framework visualizations and audience engagement. Conferences, business schools, and corporate events worldwide.</p>
+          <p class="engagement-outcome">Audiences leave with ideas they can act on, not just inspiration</p>
+        </div>
       </div>
+
       <div class="engagement-card">
-        <div class="engagement-icon" style="background: #f0fdf4;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="engagement-visual" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);">
+          <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Classroom / workshop abstraction -->
+            <!-- Whiteboard -->
+            <rect x="65" y="15" width="70" height="45" rx="4" fill="#16a34a" opacity="0.1" stroke="#16a34a" stroke-width="1" opacity="0.2"/>
+            <line x1="75" y1="28" x2="115" y2="28" stroke="#16a34a" stroke-width="1.5" opacity="0.25"/>
+            <line x1="75" y1="36" x2="105" y2="36" stroke="#16a34a" stroke-width="1.5" opacity="0.2"/>
+            <line x1="75" y1="44" x2="120" y2="44" stroke="#16a34a" stroke-width="1.5" opacity="0.15"/>
+            <!-- Workshop participants in circle -->
+            <circle cx="70" cy="85" r="7" fill="#16a34a" opacity="0.2"/>
+            <circle cx="95" cy="78" r="7" fill="#16a34a" opacity="0.2"/>
+            <circle cx="120" cy="85" r="7" fill="#16a34a" opacity="0.2"/>
+            <circle cx="108" cy="102" r="7" fill="#16a34a" opacity="0.2"/>
+            <circle cx="82" cy="102" r="7" fill="#16a34a" opacity="0.2"/>
+            <!-- Connection lines -->
+            <line x1="77" y1="85" x2="88" y2="80" stroke="#16a34a" stroke-width="0.8" opacity="0.15"/>
+            <line x1="102" y1="80" x2="113" y2="85" stroke="#16a34a" stroke-width="0.8" opacity="0.15"/>
+            <line x1="85" y1="99" x2="105" y2="99" stroke="#16a34a" stroke-width="0.8" opacity="0.15"/>
+          </svg>
         </div>
-        <h3 class="engagement-title">Executive Education</h3>
-        <p class="engagement-text">Programs that build innovation and leadership capability across business disciplines. Intensive workshops to multi-session series for senior leaders.</p>
-        <p class="engagement-outcome">Participants gain diagnostic tools they apply the following Monday</p>
+        <div class="engagement-body">
+          <h3 class="engagement-title">Executive Education</h3>
+          <p class="engagement-text">Programs that build innovation and leadership capability. Intensive workshops to multi-session series, drawn from ongoing research.</p>
+          <p class="engagement-outcome">Participants gain diagnostic tools they can apply immediately</p>
+        </div>
       </div>
+
       <div class="engagement-card">
-        <div class="engagement-icon" style="background: #fef3c7;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="engagement-visual" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+          <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Compass / direction abstraction -->
+            <circle cx="100" cy="58" r="35" stroke="#d97706" stroke-width="1.5" opacity="0.2" fill="none"/>
+            <circle cx="100" cy="58" r="25" stroke="#d97706" stroke-width="1" opacity="0.12" fill="none"/>
+            <!-- Compass needle -->
+            <path d="M100 30 L104 58 L100 65 L96 58 Z" fill="#d97706" opacity="0.25"/>
+            <path d="M100 86 L104 58 L100 51 L96 58 Z" fill="#d97706" opacity="0.12"/>
+            <!-- Cardinal points -->
+            <circle cx="100" cy="23" r="2.5" fill="#d97706" opacity="0.3"/>
+            <circle cx="135" cy="58" r="2" fill="#d97706" opacity="0.15"/>
+            <circle cx="65" cy="58" r="2" fill="#d97706" opacity="0.15"/>
+            <circle cx="100" cy="93" r="2" fill="#d97706" opacity="0.15"/>
+            <!-- Dotted path from compass -->
+            <circle cx="142" cy="40" r="1.5" fill="#d97706" opacity="0.2"/>
+            <circle cx="150" cy="34" r="1.5" fill="#d97706" opacity="0.18"/>
+            <circle cx="158" cy="28" r="1.5" fill="#d97706" opacity="0.15"/>
+          </svg>
         </div>
-        <h3 class="engagement-title">Strategic Advisory</h3>
-        <p class="engagement-text">AI adoption strategy, change management, and futures-oriented planning. Advisory to C-suite leaders and academic institutions on integrating AI across the enterprise.</p>
-        <p class="engagement-outcome">You get a roadmap with prioritized use cases and a change plan</p>
+        <div class="engagement-body">
+          <h3 class="engagement-title">Advisory</h3>
+          <p class="engagement-text">Thinking partner for leaders navigating AI adoption, organizational change, and futures-oriented planning. I bring research and frameworks, not deliverables decks.</p>
+          <p class="engagement-outcome">You get clarity on where to focus and why</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -576,9 +686,9 @@
 <section class="contact-section" id="contact">
   <div class="container">
     <p class="section-label">Contact</p>
-    <h2 class="section-title">Let's work together</h2>
-    <p class="section-intro">Available for keynote speaking, executive education, and strategic advisory.</p>
-    <p class="contact-next">Typically starts with a 30-minute discovery call.</p>
+    <h2 class="section-title">Let's talk</h2>
+    <p class="section-intro">Open to speaking invitations, teaching collaborations, and advisory conversations.</p>
+    <p class="contact-next">Usually starts with a short call to see if there's a fit.</p>
     <div class="contact-links">
       <a href="mailto:josephpress1@gmail.com" class="contact-link">josephpress1@gmail.com</a>
       <a href="https://www.linkedin.com/in/josephpress" class="contact-link" target="_blank">LinkedIn</a>
