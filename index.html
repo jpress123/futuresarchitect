@@ -152,6 +152,9 @@
     font-size: 2rem; font-weight: 600; color: var(--navy);
     margin-bottom: 1rem; line-height: 1.25;
   }
+  .section-title.hero-size {
+    font-size: 2.8rem; font-weight: 700; line-height: 1.15;
+  }
   .section-intro {
     font-size: 1.02rem; color: var(--medium); max-width: 680px;
     margin-bottom: 3rem; line-height: 1.7;
@@ -269,6 +272,7 @@
     .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 7rem; }
     .hero-photo { width: 220px; height: 300px; margin: 0 auto; order: -1; }
     .hero-text h1 { font-size: 2.1rem; }
+    .section-title.hero-size { font-size: 2.1rem; }
     .domain-header { grid-template-columns: 1fr; }
     .domain-cover img { width: 120px; }
     .domain-cover-placeholder { width: 120px; }
@@ -297,8 +301,7 @@
     <a href="#" class="nav-name">Prof. Joseph Press, Ph.D.</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#expertise">Capabilities</a></li>
-      <li><a href="#credentials">Background</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#credentials">About Me</a></li>
     </ul>
     <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -383,7 +386,7 @@
 <!-- FOUR CAPABILITIES -->
 <section class="domains-section" id="expertise">
   <div class="container">
-    <h2 class="section-title">Five Capabilities for the AI Era</h2>
+    <h2 class="section-title hero-size">Five Capabilities for the AI Era</h2>
 
     <!-- 1. Augmented Foresight -->
     <div class="domain">
@@ -500,8 +503,7 @@
 <!-- CREDENTIALS -->
 <section class="credentials-section" id="credentials">
   <div class="container">
-    <p class="section-label">Background</p>
-    <h2 class="section-title">Credentials</h2>
+    <h2 class="section-title">About Me</h2>
     <div class="credentials-grid">
       <div class="credential-group">
         <h3>Education</h3>
@@ -530,9 +532,8 @@
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="container">
-    <p class="section-label">Contact</p>
     <h2 class="section-title">Let's Collaborate</h2>
-    <p class="section-intro">Available for keynote speaking, executive education, and strategic advisory.</p>
+    <p class="section-intro">Available for executive education, lectures/keynotes, and strategic advisory.</p>
     <p class="contact-next">Typically starts with a 30-minute discovery call.</p>
     <div class="contact-links">
       <!-- Replace # with your Google Calendar appointment scheduling URL -->
