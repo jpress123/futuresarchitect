@@ -189,14 +189,24 @@
   .domain-right {
     display: flex; flex-direction: column; gap: 0.35rem; justify-content: center;
   }
-  .domain-experience {
-    font-size: 0.84rem; color: var(--medium); line-height: 1.45;
-    padding: 0.45rem 0;
-    border-bottom: 1px solid #f1f5f9;
+  .domain-cover {
+    align-items: center; gap: 0.8rem;
   }
-  .domain-experience:last-child { border-bottom: none; }
-  .domain-experience strong { color: var(--navy); font-weight: 600; }
-  .domain-experience .org { color: var(--light); }
+  .domain-cover img {
+    width: 160px; border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+  .domain-cover-placeholder {
+    width: 160px; aspect-ratio: 2/3; border-radius: 4px;
+    background: linear-gradient(135deg, #2e4057 0%, #1a1a2e 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    padding: 1rem;
+  }
+  .domain-book-meta {
+    font-size: 0.75rem; color: var(--light); text-align: center;
+    margin-top: 0.3rem;
+  }
   .domain-frameworks {
     margin-top: 0.8rem;
     display: flex; flex-wrap: wrap; gap: 0.4rem;
@@ -208,69 +218,9 @@
     letter-spacing: 0.01em;
   }
 
-  /* BOOKS */
-  .books-section { background: var(--warm); }
-  .books-grid {
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem;
-  }
-  .book-card {
-    text-align: left;
-    transition: transform 0.2s;
-  }
-  .book-card:hover { transform: translateY(-4px); }
-  .book-cover {
-    width: 100%; aspect-ratio: 2/3;
-    border-radius: 4px; margin-bottom: 0.8rem;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-  }
-  .book-cover img {
-    width: 100%; height: 100%; object-fit: cover;
-  }
-  .book-cover-placeholder {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    padding: 1rem;
-  }
   .book-cover-text {
     color: rgba(255,255,255,0.9); font-size: 0.82rem;
     font-weight: 600; text-align: center; line-height: 1.35;
-  }
-  .book-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 0.15rem;
-  }
-  .book-meta { font-size: 0.73rem; color: var(--light); }
-
-  /* ENGAGEMENTS */
-  .engagements-section { background: var(--white); }
-  .engagements-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-  .engagement-card {
-    border: 1px solid var(--pale); border-radius: 12px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    overflow: hidden;
-  }
-  .engagement-card:hover { border-color: #b0c4de; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
-  .engagement-visual {
-    width: 100%; height: 160px;
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-  }
-  .engagement-body {
-    padding: 1.6rem 1.6rem 1.8rem;
-  }
-  .engagement-title {
-    font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem;
-  }
-  .engagement-text { font-size: 0.85rem; color: var(--medium); line-height: 1.65; margin-bottom: 1rem; }
-  .engagement-visual img {
-    height: 100%; width: auto; max-width: 100%; object-fit: contain;
-  }
-  .engagement-tags {
-    display: flex; flex-wrap: wrap; gap: 0.35rem;
-  }
-  .engagement-tags .framework-tag {
-    font-size: 0.68rem;
   }
 
   /* CREDENTIALS */
@@ -321,8 +271,8 @@
     .hero-photo { width: 220px; height: 300px; margin: 0 auto; order: -1; }
     .hero-text h1 { font-size: 2.1rem; }
     .domain-header { grid-template-columns: 1fr; }
-    .books-grid { grid-template-columns: repeat(2, 1fr); }
-    .engagements-grid { grid-template-columns: repeat(2, 1fr); }
+    .domain-cover img { width: 120px; }
+    .domain-cover-placeholder { width: 120px; }
     .credentials-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .sector-label { min-width: auto; }
@@ -347,9 +297,7 @@
   <div class="nav-inner">
     <a href="#" class="nav-name">Joseph Press</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#books">Books</a></li>
-      <li><a href="#engagements">Collaborate</a></li>
+      <li><a href="#expertise">Capabilities</a></li>
       <li><a href="#credentials">Background</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -433,206 +381,100 @@
   </div>
 </div>
 
-<!-- THREE DOMAINS -->
+<!-- FOUR CAPABILITIES -->
 <section class="domains-section" id="expertise">
   <div class="container">
-    <p class="section-label">Areas of Focus</p>
-    <h2 class="section-title">Three domains for the AI era</h2>
+    <p class="section-label">Capabilities</p>
+    <h2 class="section-title">Four Capabilities for the AI Era</h2>
 
-    <!-- DOMAIN 1 -->
+    <!-- 1. Strategic Foresight -->
     <div class="domain">
       <div class="domain-header">
         <div class="domain-left">
-          <p class="domain-number">Domain One</p>
           <h3 class="domain-title">Strategic Foresight for Impact</h3>
           <p class="domain-subtitle">Imagine &mdash; Design &mdash; Lead</p>
           <p class="domain-text">Applied futures thinking for strategic decision-making. Using generative AI for scenario simulation and policy forecasting so leaders can anticipate change and act on it &mdash; across industries, sectors, and functions.</p>
-        </div>
-        <div class="domain-right">
-          <div class="domain-experience"><strong>Research Advisor</strong> <span class="org">&mdash; Institute for the Future (IFTF)</span></div>
-          <div class="domain-experience"><strong>Associated Partner</strong> <span class="org">&mdash; Copenhagen Institute for Futures Studies</span></div>
-          <div class="domain-experience"><strong>Cross-industry foresight</strong> <span class="org">&mdash; John Deere, Westrock, USM</span></div>
-          <div class="domain-experience"><strong>Full Professor</strong> <span class="org">&mdash; Shanghai University of Engineering Sciences</span></div>
-        </div>
-      </div>
-      <div class="domain-frameworks">
-        <span class="framework-tag">Research Advisor, IFTF</span>
-        <span class="framework-tag">Foresight for John Deere, Westrock, USM</span>
-        <span class="framework-tag">Augmented Design with Politecnico di Milano</span>
-        <span class="framework-tag">Futureback strategy with Bob Johansen</span>
-      </div>
-    </div>
-
-    <!-- DOMAIN 2 -->
-    <div class="domain">
-      <div class="domain-header">
-        <div class="domain-left">
-          <p class="domain-number">Domain Two</p>
-          <h3 class="domain-title">AI&ndash;Human Collaboration for Innovation</h3>
-          <p class="domain-subtitle">Spark and augment innovation capacity</p>
-          <p class="domain-text">Governance structures and diagnostic tools for teams adopting AI while preserving judgment, accountability, and the capacity to innovate. Applicable to executive education, R&D, and cross-functional programs.</p>
-        </div>
-        <div class="domain-right">
-          <div class="domain-experience"><strong>Visiting Professor & Research Director</strong> <span class="org">&mdash; Politecnico di Milano</span></div>
-          <div class="domain-experience"><strong>IDeaLs Research Lab</strong> <span class="org">&mdash; Nestl&eacute;, Philips, Adidas, Stolt</span></div>
-          <div class="domain-experience"><strong>DET Conference</strong> <span class="org">&mdash; AI, XR, IoT, Web3</span></div>
-          <div class="domain-experience"><strong>Vice-Dean</strong> <span class="org">&mdash; NACAA Design Institute</span></div>
-          <div class="domain-experience"><strong>Program Founder</strong> <span class="org">&mdash; Parsons New School of Design</span></div>
-        </div>
-      </div>
-      <div class="domain-frameworks">
-        <span class="framework-tag">IDeaLs lab with Nestl&eacute;, Philips, Adidas</span>
-        <span class="framework-tag">ACI book with Routledge (2026)</span>
-        <span class="framework-tag">Storymaking research with Politecnico</span>
-        <span class="framework-tag">DET conference, 25 faculty, 100+ participants</span>
-      </div>
-    </div>
-
-    <!-- DOMAIN 3 -->
-    <div class="domain">
-      <div class="domain-header">
-        <div class="domain-left">
-          <p class="domain-number">Domain Three</p>
-          <h3 class="domain-title">AI Transformation for Integration</h3>
-          <p class="domain-subtitle">AI at the core of every offering, process, and function</p>
-          <p class="domain-text">15 years founding and directing a digital agency and transformation consulting practice. Use-case identification, process mapping, change management, and enterprise-scale integration &mdash; from ERP to AI.</p>
-        </div>
-        <div class="domain-right">
-          <div class="domain-experience"><strong>Founder & Director</strong> <span class="org">&mdash; Deloitte Digital Switzerland (EMEA)</span></div>
-          <div class="domain-experience"><strong>Executive Education Advisor</strong> <span class="org">&mdash; Center for Creative Leadership</span></div>
-          <div class="domain-experience"><strong>Co-Founder</strong> <span class="org">&mdash; Make Our Future</span></div>
-          <div class="domain-experience"><strong>Innovation center advisory</strong> <span class="org">&mdash; GovLab, Center for the Edge</span></div>
-        </div>
-      </div>
-      <div class="domain-frameworks">
-        <span class="framework-tag">Founded Deloitte Digital Switzerland</span>
-        <span class="framework-tag">Advisor, Center for Creative Leadership</span>
-        <span class="framework-tag">Research on why 50%+ transformations stall</span>
-        <span class="framework-tag">GovLab, Center for the Edge, Federal Innovation</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- BOOKS -->
-<section class="books-section" id="books">
-  <div class="container">
-    <p class="section-label">Books</p>
-    <h2 class="section-title">Five books on intelligence, transformation & leadership</h2>
-    <div class="books-grid">
-      <div class="book-card">
-        <div class="book-cover" style="background: linear-gradient(135deg, #2e4057 0%, #1a1a2e 100%);">
-          <div class="book-cover-placeholder">
-            <span class="book-cover-text">Agentic<br>Creative<br>Intelligence</span>
-          </div>
-        </div>
-        <h3 class="book-title">Designing with Agentic Creative Intelligence</h3>
-        <p class="book-meta">Routledge, Fall 2026</p>
-      </div>
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="cover-dsf.jpg" alt="Designing Sustainable Futures">
-        </div>
-        <h3 class="book-title">Designing Sustainable Futures</h3>
-        <p class="book-meta">Routledge, 2024</p>
-      </div>
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="cover-officeshock.jpg" alt="Office Shock">
-        </div>
-        <h3 class="book-title">Office Shock</h3>
-        <p class="book-meta">Berrett-Koehler, 2023</p>
-      </div>
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="cover-storymaking.jpg" alt="Storymaking and Organizational Transformation">
-        </div>
-        <h3 class="book-title">Storymaking</h3>
-        <p class="book-meta">Routledge, 2022</p>
-      </div>
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="cover-ideals.jpg" alt="IDeaLs: Innovation and Design as Leadership">
-        </div>
-        <h3 class="book-title">IDeaLs</h3>
-        <p class="book-meta">Emerald, 2021</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ENGAGEMENTS -->
-<section class="engagements-section" id="engagements">
-  <div class="container">
-    <p class="section-label">Let's Collaborate</p>
-    <div class="engagements-grid">
-
-      <div class="engagement-card">
-        <div class="engagement-visual" style="background: var(--warm);">
-          <img src="cover-dsf.jpg" alt="Designing Sustainable Futures">
-        </div>
-        <div class="engagement-body">
-          <h3 class="engagement-title">Strategic Foresight for Impact</h3>
-          <p class="engagement-text">Applied futures thinking for leaders navigating AI-driven change across industries, sectors, and functions.</p>
-          <div class="engagement-tags">
+          <div class="domain-frameworks">
             <span class="framework-tag">Research Advisor, IFTF</span>
             <span class="framework-tag">Partner, Copenhagen Futures Studies</span>
             <span class="framework-tag">Foresight for John Deere, Westrock, USM</span>
             <span class="framework-tag">Professor, Shanghai University</span>
+            <span class="framework-tag">Futureback strategy with Bob Johansen</span>
           </div>
         </div>
-      </div>
-
-      <div class="engagement-card">
-        <div class="engagement-visual" style="background: linear-gradient(135deg, #2e4057 0%, #1a1a2e 100%); display: flex; align-items: center; justify-content: center;">
-          <span style="color: rgba(255,255,255,0.85); font-size: 0.95rem; font-weight: 600; text-align: center; line-height: 1.4;">Agentic<br>Creative<br>Intelligence</span>
+        <div class="domain-right domain-cover">
+          <img src="cover-dsf.jpg" alt="Designing Sustainable Futures">
+          <p class="domain-book-meta">Designing Sustainable Futures &mdash; Routledge, 2024</p>
         </div>
-        <div class="engagement-body">
-          <h3 class="engagement-title">AI&ndash;Human Collaboration for Innovation</h3>
-          <p class="engagement-text">Governance and diagnostic tools for teams adopting AI while preserving judgment, accountability, and the capacity to innovate.</p>
-          <div class="engagement-tags">
+      </div>
+    </div>
+
+    <!-- 2. AI-Human Collaboration -->
+    <div class="domain">
+      <div class="domain-header">
+        <div class="domain-left">
+          <h3 class="domain-title">AI&ndash;Human Collaboration for Innovation</h3>
+          <p class="domain-subtitle">Spark and augment innovation capacity</p>
+          <p class="domain-text">Governance structures and diagnostic tools for teams adopting AI while preserving judgment, accountability, and the capacity to innovate. Applicable to executive education, R&D, and cross-functional programs.</p>
+          <div class="domain-frameworks">
             <span class="framework-tag">Research Director, Politecnico di Milano</span>
             <span class="framework-tag">IDeaLs lab: Nestl&eacute;, Philips, Adidas</span>
             <span class="framework-tag">DET Conference founder</span>
             <span class="framework-tag">Vice-Dean, NACAA Design Institute</span>
+            <span class="framework-tag">Program Founder, Parsons</span>
           </div>
         </div>
-      </div>
-
-      <div class="engagement-card">
-        <div class="engagement-visual" style="background: var(--warm);">
-          <img src="cover-officeshock.jpg" alt="Office Shock">
+        <div class="domain-right domain-cover">
+          <div class="domain-cover-placeholder">
+            <span class="book-cover-text">Agentic<br>Creative<br>Intelligence</span>
+          </div>
+          <p class="domain-book-meta">Designing with Agentic Creative Intelligence &mdash; Routledge, Fall 2026</p>
         </div>
-        <div class="engagement-body">
-          <h3 class="engagement-title">AI Integration for Transformation</h3>
-          <p class="engagement-text">Enterprise-scale change management, process redesign, and AI integration across every offering, process, and functional unit.</p>
-          <div class="engagement-tags">
+      </div>
+    </div>
+
+    <!-- 3. AI Integration -->
+    <div class="domain">
+      <div class="domain-header">
+        <div class="domain-left">
+          <h3 class="domain-title">AI Integration for Transformation</h3>
+          <p class="domain-subtitle">AI at the core of every offering, process, and function</p>
+          <p class="domain-text">15 years founding and directing a digital agency and transformation consulting practice. Use-case identification, process mapping, change management, and enterprise-scale integration &mdash; from ERP to AI.</p>
+          <div class="domain-frameworks">
             <span class="framework-tag">Founded Deloitte Digital Switzerland</span>
             <span class="framework-tag">Advisor, Center for Creative Leadership</span>
             <span class="framework-tag">Co-Founder, Make Our Future</span>
             <span class="framework-tag">Advisory: GovLab, Center for the Edge</span>
           </div>
         </div>
-      </div>
-
-      <div class="engagement-card">
-        <div class="engagement-visual" style="background: var(--warm);">
-          <img src="cover-ideals.jpg" alt="IDeaLs: Innovation and Design as Leadership">
+        <div class="domain-right domain-cover">
+          <img src="cover-officeshock.jpg" alt="Office Shock">
+          <p class="domain-book-meta">Office Shock &mdash; Berrett-Koehler, 2023</p>
         </div>
-        <div class="engagement-body">
-          <h3 class="engagement-title">Augmented Education for Future-Ready Leadership</h3>
-          <p class="engagement-text">Engagement-centered models for leading innovation and transformation &mdash; why 50%+ of digital transformations stall, and how to prevent it.</p>
-          <div class="engagement-tags">
+      </div>
+    </div>
+
+    <!-- 4. Augmented Education -->
+    <div class="domain">
+      <div class="domain-header">
+        <div class="domain-left">
+          <h3 class="domain-title">Augmented Education for Future-Ready Leadership</h3>
+          <p class="domain-subtitle">Engagement-centered models for innovation and transformation</p>
+          <p class="domain-text">Why 50%+ of digital transformations stall, and how to prevent it. Research-based approaches to leadership development, organizational engagement, and storymaking as a tool for systemic change.</p>
+          <div class="domain-frameworks">
             <span class="framework-tag">IDeaLs research with 7 global companies</span>
             <span class="framework-tag">Program Founder, Parsons New School</span>
             <span class="framework-tag">Storymaking for organizational change</span>
             <span class="framework-tag">Ph.D. Design Technology, MIT</span>
           </div>
         </div>
+        <div class="domain-right domain-cover">
+          <img src="cover-ideals.jpg" alt="IDeaLs: Innovation and Design as Leadership">
+          <p class="domain-book-meta">IDeaLs &mdash; Emerald, 2021</p>
+        </div>
       </div>
-
     </div>
+
   </div>
 </section>
 
