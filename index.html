@@ -244,7 +244,7 @@
 
   /* ENGAGEMENTS */
   .engagements-section { background: var(--white); }
-  .engagements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .engagements-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
   .engagement-card {
     border: 1px solid var(--pale); border-radius: 12px;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -262,10 +262,15 @@
   .engagement-title {
     font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem;
   }
-  .engagement-text { font-size: 0.85rem; color: var(--medium); line-height: 1.65; margin-bottom: 0.8rem; }
-  .engagement-outcome {
-    font-size: 0.78rem; font-weight: 600; color: var(--accent);
-    padding-top: 0.8rem; border-top: 1px solid var(--pale);
+  .engagement-text { font-size: 0.85rem; color: var(--medium); line-height: 1.65; margin-bottom: 1rem; }
+  .engagement-visual img {
+    height: 100%; width: auto; max-width: 100%; object-fit: contain;
+  }
+  .engagement-tags {
+    display: flex; flex-wrap: wrap; gap: 0.35rem;
+  }
+  .engagement-tags .framework-tag {
+    font-size: 0.68rem;
   }
 
   /* CREDENTIALS */
@@ -317,7 +322,7 @@
     .hero-text h1 { font-size: 2.1rem; }
     .domain-header { grid-template-columns: 1fr; }
     .books-grid { grid-template-columns: repeat(2, 1fr); }
-    .engagements-grid { grid-template-columns: 1fr; }
+    .engagements-grid { grid-template-columns: repeat(2, 1fr); }
     .credentials-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .sector-label { min-width: auto; }
@@ -344,7 +349,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#expertise">Expertise</a></li>
       <li><a href="#books">Books</a></li>
-      <li><a href="#engagements">Let's Collaborate</a></li>
+      <li><a href="#engagements">Collaborate</a></li>
       <li><a href="#credentials">Background</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -564,86 +569,66 @@
     <div class="engagements-grid">
 
       <div class="engagement-card">
-        <div class="engagement-visual" style="background: linear-gradient(135deg, #eef2ff 0%, #dbeafe 100%);">
-          <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Podium / stage abstraction -->
-            <rect x="60" y="70" width="80" height="8" rx="4" fill="#3182ce" opacity="0.2"/>
-            <rect x="50" y="82" width="100" height="4" rx="2" fill="#3182ce" opacity="0.1"/>
-            <!-- Speaker figure -->
-            <circle cx="100" cy="38" r="10" fill="#3182ce" opacity="0.3"/>
-            <path d="M88 52 C88 52 94 60 100 60 C106 60 112 52 112 52" stroke="#3182ce" stroke-width="2" opacity="0.3" fill="none"/>
-            <!-- Sound waves -->
-            <path d="M120 35 C124 30 124 45 120 40" stroke="#3182ce" stroke-width="1.5" opacity="0.2" fill="none"/>
-            <path d="M126 30 C132 22 132 50 126 42" stroke="#3182ce" stroke-width="1.5" opacity="0.15" fill="none"/>
-            <!-- Audience dots -->
-            <circle cx="55" cy="100" r="4" fill="#3182ce" opacity="0.15"/>
-            <circle cx="70" cy="98" r="4" fill="#3182ce" opacity="0.15"/>
-            <circle cx="85" cy="100" r="4" fill="#3182ce" opacity="0.15"/>
-            <circle cx="100" cy="98" r="4" fill="#3182ce" opacity="0.15"/>
-            <circle cx="115" cy="100" r="4" fill="#3182ce" opacity="0.15"/>
-            <circle cx="130" cy="98" r="4" fill="#3182ce" opacity="0.15"/>
-            <circle cx="145" cy="100" r="4" fill="#3182ce" opacity="0.15"/>
-          </svg>
+        <div class="engagement-visual" style="background: var(--warm);">
+          <img src="cover-dsf.jpg" alt="Designing Sustainable Futures">
         </div>
         <div class="engagement-body">
-          <h3 class="engagement-title">Keynote Speaking</h3>
-          <p class="engagement-text">Research-based talks with framework visualizations and audience engagement. Conferences, business schools, and corporate events worldwide.</p>
-          <p class="engagement-outcome">Audiences leave with ideas they can act on, not just inspiration</p>
+          <h3 class="engagement-title">Strategic Foresight for Impact</h3>
+          <p class="engagement-text">Applied futures thinking for leaders navigating AI-driven change across industries, sectors, and functions.</p>
+          <div class="engagement-tags">
+            <span class="framework-tag">Research Advisor, IFTF</span>
+            <span class="framework-tag">Partner, Copenhagen Futures Studies</span>
+            <span class="framework-tag">Foresight for John Deere, Westrock, USM</span>
+            <span class="framework-tag">Professor, Shanghai University</span>
+          </div>
         </div>
       </div>
 
       <div class="engagement-card">
-        <div class="engagement-visual" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);">
-          <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Classroom / workshop abstraction -->
-            <!-- Whiteboard -->
-            <rect x="65" y="15" width="70" height="45" rx="4" fill="#16a34a" opacity="0.1" stroke="#16a34a" stroke-width="1" opacity="0.2"/>
-            <line x1="75" y1="28" x2="115" y2="28" stroke="#16a34a" stroke-width="1.5" opacity="0.25"/>
-            <line x1="75" y1="36" x2="105" y2="36" stroke="#16a34a" stroke-width="1.5" opacity="0.2"/>
-            <line x1="75" y1="44" x2="120" y2="44" stroke="#16a34a" stroke-width="1.5" opacity="0.15"/>
-            <!-- Workshop participants in circle -->
-            <circle cx="70" cy="85" r="7" fill="#16a34a" opacity="0.2"/>
-            <circle cx="95" cy="78" r="7" fill="#16a34a" opacity="0.2"/>
-            <circle cx="120" cy="85" r="7" fill="#16a34a" opacity="0.2"/>
-            <circle cx="108" cy="102" r="7" fill="#16a34a" opacity="0.2"/>
-            <circle cx="82" cy="102" r="7" fill="#16a34a" opacity="0.2"/>
-            <!-- Connection lines -->
-            <line x1="77" y1="85" x2="88" y2="80" stroke="#16a34a" stroke-width="0.8" opacity="0.15"/>
-            <line x1="102" y1="80" x2="113" y2="85" stroke="#16a34a" stroke-width="0.8" opacity="0.15"/>
-            <line x1="85" y1="99" x2="105" y2="99" stroke="#16a34a" stroke-width="0.8" opacity="0.15"/>
-          </svg>
+        <div class="engagement-visual" style="background: linear-gradient(135deg, #2e4057 0%, #1a1a2e 100%); display: flex; align-items: center; justify-content: center;">
+          <span style="color: rgba(255,255,255,0.85); font-size: 0.95rem; font-weight: 600; text-align: center; line-height: 1.4;">Agentic<br>Creative<br>Intelligence</span>
         </div>
         <div class="engagement-body">
-          <h3 class="engagement-title">Executive Education</h3>
-          <p class="engagement-text">Programs that build innovation and leadership capability. Intensive workshops to multi-session series, drawn from ongoing research.</p>
-          <p class="engagement-outcome">Participants gain diagnostic tools they can apply immediately</p>
+          <h3 class="engagement-title">AI&ndash;Human Collaboration for Innovation</h3>
+          <p class="engagement-text">Governance and diagnostic tools for teams adopting AI while preserving judgment, accountability, and the capacity to innovate.</p>
+          <div class="engagement-tags">
+            <span class="framework-tag">Research Director, Politecnico di Milano</span>
+            <span class="framework-tag">IDeaLs lab: Nestl&eacute;, Philips, Adidas</span>
+            <span class="framework-tag">DET Conference founder</span>
+            <span class="framework-tag">Vice-Dean, NACAA Design Institute</span>
+          </div>
         </div>
       </div>
 
       <div class="engagement-card">
-        <div class="engagement-visual" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
-          <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Compass / direction abstraction -->
-            <circle cx="100" cy="58" r="35" stroke="#d97706" stroke-width="1.5" opacity="0.2" fill="none"/>
-            <circle cx="100" cy="58" r="25" stroke="#d97706" stroke-width="1" opacity="0.12" fill="none"/>
-            <!-- Compass needle -->
-            <path d="M100 30 L104 58 L100 65 L96 58 Z" fill="#d97706" opacity="0.25"/>
-            <path d="M100 86 L104 58 L100 51 L96 58 Z" fill="#d97706" opacity="0.12"/>
-            <!-- Cardinal points -->
-            <circle cx="100" cy="23" r="2.5" fill="#d97706" opacity="0.3"/>
-            <circle cx="135" cy="58" r="2" fill="#d97706" opacity="0.15"/>
-            <circle cx="65" cy="58" r="2" fill="#d97706" opacity="0.15"/>
-            <circle cx="100" cy="93" r="2" fill="#d97706" opacity="0.15"/>
-            <!-- Dotted path from compass -->
-            <circle cx="142" cy="40" r="1.5" fill="#d97706" opacity="0.2"/>
-            <circle cx="150" cy="34" r="1.5" fill="#d97706" opacity="0.18"/>
-            <circle cx="158" cy="28" r="1.5" fill="#d97706" opacity="0.15"/>
-          </svg>
+        <div class="engagement-visual" style="background: var(--warm);">
+          <img src="cover-officeshock.jpg" alt="Office Shock">
         </div>
         <div class="engagement-body">
-          <h3 class="engagement-title">Strategic Advisory</h3>
-          <p class="engagement-text">AI adoption strategy, organizational change, and futures-oriented planning. I bring research and frameworks to help leaders make better decisions.</p>
-          <p class="engagement-outcome">Clarity on where to focus and why</p>
+          <h3 class="engagement-title">AI Integration for Transformation</h3>
+          <p class="engagement-text">Enterprise-scale change management, process redesign, and AI integration across every offering, process, and functional unit.</p>
+          <div class="engagement-tags">
+            <span class="framework-tag">Founded Deloitte Digital Switzerland</span>
+            <span class="framework-tag">Advisor, Center for Creative Leadership</span>
+            <span class="framework-tag">Co-Founder, Make Our Future</span>
+            <span class="framework-tag">Advisory: GovLab, Center for the Edge</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="engagement-card">
+        <div class="engagement-visual" style="background: var(--warm);">
+          <img src="cover-ideals.jpg" alt="IDeaLs: Innovation and Design as Leadership">
+        </div>
+        <div class="engagement-body">
+          <h3 class="engagement-title">Augmented Leadership</h3>
+          <p class="engagement-text">Engagement-centered models for leading innovation and transformation &mdash; why 50%+ of digital transformations stall, and how to prevent it.</p>
+          <div class="engagement-tags">
+            <span class="framework-tag">IDeaLs research with 7 global companies</span>
+            <span class="framework-tag">Program Founder, Parsons New School</span>
+            <span class="framework-tag">Storymaking for organizational change</span>
+            <span class="framework-tag">Ph.D. Design Technology, MIT</span>
+          </div>
         </div>
       </div>
 
