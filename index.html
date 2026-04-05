@@ -280,31 +280,29 @@
     font-size: 0.88rem; color: rgba(255,255,255,0.45);
     margin-bottom: 2.5rem; font-style: italic;
   }
-  .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-  .contact-link {
-    color: rgba(255,255,255,0.85); text-decoration: none;
-    font-size: 0.9rem; font-weight: 500;
-    padding: 0.65rem 1.5rem; border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 6px; transition: all 0.2s;
+  .contact-row {
+    display: flex; justify-content: center; align-items: flex-end;
+    gap: 1.5rem; flex-wrap: wrap;
   }
-  .contact-link:hover {
+  .contact-card {
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  }
+  .contact-card-label {
+    font-size: 0.72rem; color: rgba(255,255,255,0.45); font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .contact-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.85); text-decoration: none;
+    font-size: 0.88rem; font-weight: 500;
+    padding: 0.65rem 1.5rem; border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px; transition: all 0.2s; white-space: nowrap;
+  }
+  .contact-btn:hover {
     color: var(--white); border-color: rgba(255,255,255,0.5);
     background: rgba(255,255,255,0.06);
   }
-  .email-buttons { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
-  .email-btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    color: rgba(255,255,255,0.8); text-decoration: none;
-    font-size: 0.85rem; font-weight: 500;
-    padding: 0.55rem 1.2rem; border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 6px; transition: all 0.2s;
-  }
-  .email-btn:hover {
-    color: var(--white); border-color: rgba(255,255,255,0.4);
-    background: rgba(255,255,255,0.05);
-  }
-  .email-btn svg { width: 15px; height: 15px; fill: currentColor; opacity: 0.7; }
-  .email-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  .contact-btn svg { width: 15px; height: 15px; fill: currentColor; opacity: 0.7; }
 
   footer {
     text-align: center; padding: 1.5rem;
@@ -347,9 +345,9 @@
   span[data-lang="zh"] { display: none; }
   body.zh span[data-lang="zh"] { display: inline; }
   body.zh span[data-lang="en"] { display: none; }
-  .hero-ctas[data-lang="zh"], .contact-links[data-lang="zh"], .email-buttons[data-lang="zh"] { display: none; }
-  body.zh .hero-ctas[data-lang="zh"], body.zh .contact-links[data-lang="zh"], body.zh .email-buttons[data-lang="zh"] { display: flex; }
-  body.zh .hero-ctas[data-lang="en"], body.zh .contact-links[data-lang="en"], body.zh .email-buttons[data-lang="en"] { display: none; }
+  .contact-row[data-lang="zh"] { display: none; }
+  body.zh .contact-row[data-lang="zh"] { display: flex; }
+  body.zh .contact-row[data-lang="en"] { display: none; }
   .credentials-grid[data-lang="zh"] { display: none; }
   body.zh .credentials-grid[data-lang="zh"] { display: grid; }
   body.zh .credentials-grid[data-lang="en"] { display: none; }
@@ -763,46 +761,48 @@
     <h2 class="section-title hero-size" data-lang="zh">让我们合作</h2>
     <p class="section-intro" data-lang="en">Available for executive education, lectures/keynotes, and strategic advisory.</p>
     <p class="section-intro" data-lang="zh">可提供高管教育、讲座/主题演讲和战略咨询。</p>
-    <div class="contact-links" data-lang="en">
-      <a href="https://calendar.app.google/vZRiTnxbnzyKxUYG6" class="contact-link" target="_blank" rel="noopener">Schedule a Call</a>
-      <a href="https://www.linkedin.com/in/josephpress/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="contact-links" data-lang="zh">
-      <a href="https://calendar.app.google/vZRiTnxbnzyKxUYG6" class="contact-link" target="_blank" rel="noopener">预约通话</a>
-      <a href="https://www.linkedin.com/in/josephpress/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div style="margin-top: 1.5rem;">
-      <div class="email-buttons" data-lang="en">
-        <div style="text-align:center;">
-          <p class="email-label">Advisory Email</p>
-          <a href="mailto:jp@josephpress.com" class="email-btn">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            jp@josephpress.com
-          </a>
-        </div>
-        <div style="text-align:center;">
-          <p class="email-label">Academic Email</p>
-          <a href="mailto:jp@sues.edu.cn" class="email-btn">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            jp@sues.edu.cn
-          </a>
-        </div>
+    <div class="contact-row" data-lang="en">
+      <div class="contact-card">
+        <a href="https://calendar.app.google/vZRiTnxbnzyKxUYG6" class="contact-btn" target="_blank" rel="noopener">Schedule a Call</a>
       </div>
-      <div class="email-buttons" data-lang="zh">
-        <div style="text-align:center;">
-          <p class="email-label">咨询邮箱</p>
-          <a href="mailto:jp@josephpress.com" class="email-btn">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            jp@josephpress.com
-          </a>
-        </div>
-        <div style="text-align:center;">
-          <p class="email-label">学术邮箱</p>
-          <a href="mailto:jp@sues.edu.cn" class="email-btn">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            jp@sues.edu.cn
-          </a>
-        </div>
+      <div class="contact-card">
+        <a href="https://www.linkedin.com/in/josephpress/" class="contact-btn" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-label">Advisory</p>
+        <a href="mailto:jp@josephpress.com" class="contact-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          jp@josephpress.com
+        </a>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-label">Academic</p>
+        <a href="mailto:jp@sues.edu.cn" class="contact-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          jp@sues.edu.cn
+        </a>
+      </div>
+    </div>
+    <div class="contact-row" data-lang="zh">
+      <div class="contact-card">
+        <a href="https://calendar.app.google/vZRiTnxbnzyKxUYG6" class="contact-btn" target="_blank" rel="noopener">预约通话</a>
+      </div>
+      <div class="contact-card">
+        <a href="https://www.linkedin.com/in/josephpress/" class="contact-btn" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-label">咨询</p>
+        <a href="mailto:jp@josephpress.com" class="contact-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          jp@josephpress.com
+        </a>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-label">学术</p>
+        <a href="mailto:jp@sues.edu.cn" class="contact-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          jp@sues.edu.cn
+        </a>
       </div>
     </div>
   </div>
